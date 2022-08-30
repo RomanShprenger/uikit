@@ -1,0 +1,49 @@
+@import '../../../styles/beaver/variables';
+
+.yui-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: map-get($colors, white);
+  overflow: auto;
+  box-shadow: 0 11px 15px rgba(178, 180, 191, 0.2), 0 9px 46px rgba(178, 180, 191, 0.12), 0 24px 38px rgba(178, 180, 191, 0.14);
+  border-radius: 8px;
+  outline: none;
+  min-width: 288px;
+
+  &__header {
+    padding: 24px 24px 0;
+  }
+
+  &__body {
+    padding: 16px 24px 12px;
+
+    &:first-child {
+      padding-top: 24px;
+    }
+
+    &:last-child {
+      padding-bottom: 24px;
+    }
+
+    &:only-child {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+  &__footer {
+    padding: 0px 8px 8px;
+    text-align: right;
+  }
+}
+
+.yui-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(121, 121, 133, 0.3);
+}

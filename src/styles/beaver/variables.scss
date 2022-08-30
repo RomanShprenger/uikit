@@ -1,0 +1,202 @@
+$colors: (
+  accent: #0085ff,
+  white: #FFFFFF,
+  white85: rgba(#FFFFFF, 0.85),
+  white70: rgba(#FFFFFF, 0.70),
+  white30: rgba(#FFFFFF, 0.30),
+  white10: rgba(#FFFFFF, 0.10),
+  black: #262628,
+  black20: rgba(#000000, 0.20),
+  grey80: #494952,
+  grey60: #797985,
+  grey30: #B2B4BF,
+  grey15: #DCDEE5,
+  grey10: #F2F5F7,
+  grey05: #F9FAFB,
+  error: #E53935,
+  warning: #F18701,
+  success: #65B236,
+  links_dark: #B2BDFF,
+  link: #3F51B5,
+);
+
+$multiplicity: 4px;
+
+$font-family: 'Roboto', sans-serif;
+
+$breakpoints: (
+  all: "screen",
+  desktop: "screen and (min-width: 1280px)",
+  tablet: "screen and (min-width: 768px) and (max-width: 1279px)",
+  mobile: "screen and (max-width: 520px)",
+);
+
+$directions: (
+  l: "left",
+  r: "right",
+  b: "bottom",
+  t: "top",
+  x: "x",
+  y: "y",
+);
+
+$sizes: (
+  all: (
+    xxs: 1,
+    xs: 2,
+    s: 3,
+    m: 4,
+    l: 6,
+    xl: 10,
+    xxl: 12,
+    xxxl: 14,
+  ),
+  mobile: (
+    xl: 8,
+    xxxl: 12,
+  )
+);
+
+$heading: (
+  h1: (
+    font-size: 24px,
+    line-height: 32px,
+    letter-spacing: normal,
+    font-weight: 500,
+  ),
+  h2: (
+    font-size: 20px,
+    line-height: 24px,
+    letter-spacing: 0.25px,
+    font-weight: 500,
+  ),
+  h3: (
+    font-size: 16px,
+    line-height: 20px,
+    letter-spacing: 0.25px,
+    font-weight: 500,
+  ),
+  h4: (
+    font-size: 14px,
+    line-height: 16px,
+    letter-spacing: 0.2px,
+    font-weight: 500,
+  ),
+);
+
+$button: (
+  font-size: 12px,
+  font-weight: 500,
+  letter-spacing: 0.75px,
+  color: map-get($colors, white),
+);
+
+$checkbox: (
+  font-size: 15px,
+  line-height: 24px,
+  font-weight: normal,
+  letter-spacing: 0.15px,
+  label-line-height: 20px,
+  border-radius: 2px,
+  size: 14px,
+);
+
+$radio: (
+  font-size: 15px,
+  line-height: 22px,
+  font-weight: normal,
+  letter-spacing: 0.15px,
+  label-line-height: 22px,
+  size: 16px,
+);
+
+$switcher: (
+  font-size: 15px,
+  line-height: 24px,
+  font-weight: normal,
+  letter-spacing: 0.15px,
+  label-line-height: 20px,
+  size: 16px,
+  height: 12px,
+  width: 28px,
+);
+
+$input: (
+  font-size: 16px,
+  icon-font-size: 24px,
+  height: 40px,
+  font-weight: normal,
+  letter-spacing: 0.15px,
+  border-radius: 2px,
+  margin-y: 24px,
+);
+
+$select: (
+  font-size: 16px,
+  height: 40px,
+  line-height: 20px,
+  font-weight: normal,
+  letter-spacing: 0.15px,
+  border-radius: 2px,
+  margin-y: 24px,
+);
+
+$text: (
+  primary: (
+    font-size: 16px,
+    line-height: 24px,
+    font-weight: normal,
+    letter-spacing: 0.15px,
+  ),
+  compact: (
+    font-size: 16px,
+    line-height: 20px,
+    letter-spacing: 0.15px,
+  ),
+  caption: (
+    font-size: 14px,
+    line-height: 16px,
+    letter-spacing: 0.2px,
+    font-weight: normal,
+  ),
+  tiny: (
+    font-size: 12px,
+    line-height: 16px,
+    letter-spacing: 0.4px,
+    font-weight: normal,
+  ),
+  center: (
+    text-align: center,
+  ),
+  left: (
+    text-align: left,
+  ),
+  right: (
+    text-align: right,
+  ),
+);
+
+// Display
+
+$display: (
+  none: (
+    display: none,
+  ),
+  block: (
+    display: block,
+  ),
+);
+
+// Display
+
+$align: (
+  right: (
+    float: right,
+  ),
+  left: (
+    float: left,
+  ),
+  center: (
+    margin: 0 auto,
+  ),
+);

@@ -1,0 +1,86 @@
+$WHITE: #ffffff;
+$DARK_WHITE: #f5f5f5;
+$WHITE70: rgba($WHITE, 0.7);
+$ACCENT: #0CC469;
+$ACCENTLIGHT: #0DD16F;
+$ACCENTDARK: #0BB35F;
+$BLACK: #262628;
+$PRIMARY: #6C6B80;
+$GREY100: #48485C;
+$GREY60: #797985;
+$GREY40: #B7B7C7;
+$GREY30: #B2B4BF;
+$GREY25: #B6B6C2;
+$GREY20: #CECED6;
+$GREY17: #DBDBE0;
+$GREY15: #DCDEE5;
+$GREY10: #EEEEF1;
+$GREY7: #F5F5F5;
+$GREY05: #FAFAFA;
+
+$TUNA: #30303D;
+$SANTAS-GREY: #9B9AAB;
+$FRENCH-GRAY: #B4B3BD;
+$GALLERY: #EDEDED;
+
+$ERROR: rgba(204, 20, 54, 0.65);
+$WARNING: #F18701;
+$SUCCESS: #65B236;
+
+$tableCellBg: #fafafa;
+$tableBorderColor: #ededed;
+$tableHeadingBackgroundColor: #f4f4f4;
+$tableHeadingColor: #b4b3bd;
+$tableTextColor: #6c6b80;
+$tableTextRedColor: #d68989;
+
+$multiplicity: 4;
+
+$font-family: 'Roboto', sans-serif;
+
+$checkbox-font-size: 15px;
+$checkbox-line-height: 24px;
+$checkbox-font-weight: normal;
+$checkbox-letter-spacing: 0.15px;
+$checkbox-label-line-height: 20px;
+$checkbox-border-radius: 2px;
+$checkbox-size: 14px;
+
+$switcher-font-size: 15px;
+$switcher-line-height: 24px;
+$switcher-font-weight: normal;
+$switcher-letter-spacing: 0.15px;
+$switcher-label-line-height: 20px;
+$switcher-size: 14px;
+$switcher-height: 12px;
+$switcher-width: 28px;
+
+$button-font-size: 12px;
+$button-font-weight: 500;
+$button-letter-spacing: 0.75px;
+$button-color: $WHITE;
+
+$select-font-size: 12px;
+$select-height: 33px;
+$select-line-height: 2;
+$select-font-weight: normal;
+$select-letter-spacing: 0.15px;
+$select-border-radius: 4px;
+$select-margin-y: 24px;
+
+$input-font-size: 14px;
+$input-icon-font-size: 24px;
+$input-height: 32px;
+$input-font-weight: normal;
+$input-letter-spacing: 0.15px;
+$input-border-radius: 4px;
+$input-margin-y: 24px;
+
+:export {
+  tableCellBg: $tableCellBg;
+  tableBorderColor: $tableBorderColor;
+  tableHeadingBackgroundColor: $tableHeadingBackgroundColor;
+  tableHeadingColor: $tableHeadingColor;
+  tableTextColor: $tableTextColor;
+  tableTextRedColor: $tableTextRedColor;
+}

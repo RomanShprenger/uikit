@@ -1,0 +1,321 @@
+@import '../../../styles/beaver/variables';
+
+.DayPicker {
+  &__withBorder {
+    border-radius: 8px;
+    box-shadow: 0 11px 15px rgba(178, 180, 191, 0.32),
+     0 9px 46px rgba(178, 180, 191, 0.16), 0 24px 38px rgba(178, 180, 191, 0.16);
+    padding: 32px 10px 12px;
+    @media (max-width: 480px) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 0;
+      margin: 0 auto;
+      width: 100% !important;
+      box-shadow: none;
+      border: none;
+    }
+   }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    padding: 0 24px 0 20px;
+    align-items: flex-start;
+    @media (max-width: 480px) {
+      padding: 8px 16px;
+      z-index: 100;
+      position: fixed;
+      width: 100%;
+      background-color: map-get($colors, white);
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
+  }
+
+  &__range-input {
+    display: flex;
+  }
+
+  &__input {
+    width: 120px;
+    &:first-child {
+      margin-right: 8px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: -10px;
+    color: map-get($colors, 'grey60') !important;
+    &--right {
+      right: 20px;
+    }
+    &--left {
+      left: 20px;
+    }
+    @media (max-width: 480px) {
+      top: 120px;
+    }
+  }
+
+  &_weekHeader {
+    top: 36px;
+    small {
+      font-size: 12px;
+      line-height: 32px;
+      color: map-get($colors, 'grey60');
+      font-weight: 500;
+    }
+    &_li {
+      visibility: hidden;
+      font-size: 0;
+    }
+    &_li::first-letter {
+      visibility: visible;
+      font-size: 12px;
+    }
+    @media (max-width: 480px) {
+      top: 56px;
+      position: fixed;
+      background-color: map-get($colors, 'grey05');
+      margin-left: 0 !important;
+      width: 100%;
+      left: 0;
+      box-sizing: border-box;
+      text-align: center;
+      border-bottom: 2px solid map-get($colors, 'grey10');
+      padding: 4px 12px !important;
+      z-index: 100;
+    }
+  }
+
+  &_transitionContainer__horizontal {
+    height: 350px !important;
+    @media (max-width: 480px) {
+      height: 480px !important;
+      width: auto !important;
+    }
+  }
+
+  &__header-button {
+    font-size: 14px;
+    line-height: 40px;
+    padding: 0 14px;
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 8px 16px;
+    background-color: map-get($colors, white);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid map-get($colors, 'grey10');
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_focusRegion {
+    @media (max-width: 480px) {
+      position: absolute;
+      width: 100%;
+    }
+  }
+}
+
+.CalendarMonth {
+  @media (max-width: 480px) {
+    padding-top: 12px !important;
+  }
+  &_caption {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    color: map-get($colors, 'grey80');
+    padding: 0;
+    margin-bottom: 16px;
+    @media (max-width: 480px) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &_table {
+    margin-top: 52px;
+    border-collapse: inherit;
+    border-spacing: 0 4px;
+    @media (max-width: 480px) {
+      margin: 0 auto;
+    }
+  }
+}
+
+.CalendarDay {
+  &__default {
+    border: none;
+    color: map-get($colors, black);
+    font-size: 16px;
+    line-height: 24px;
+    vertical-align: middle;
+    z-index: 10;
+    position: relative;
+    background-color: map-get($colors, white);
+    &:hover {
+      background-color: map-get($colors, white);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px map-get($colors, accent);
+      border: none;
+      color: map-get($colors, black);
+    }
+
+    &:active {
+      box-shadow: inset 0 0 0 2px map-get($colors, accent);
+      color: map-get($colors, black);
+      background: transparent;
+    }
+  }
+
+  &__blocked_out_of_range {
+    color: map-get($colors, 'grey30');
+    &:hover  {
+      box-shadow: none;
+      color: map-get($colors, 'grey30');
+    }
+  }
+
+  &__selected {
+    background-color: transparent;
+    color: map-get($colors, white);
+    position: relative;
+    z-index: 10;
+    &:hover::after,
+    &:active::after {
+      background-color: map-get($colors, white);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px map-get($colors, accent);
+      border: none;
+      color: map-get($colors, black);
+    }
+    &_span {
+      background-color: map-get($colors, 'links_dark');
+      color: map-get($colors, 'link');
+      &:active,
+      &:hover {
+        background-color: map-get($colors, 'links_dark');
+        border-radius: 0;
+        box-shadow: none;
+        color: map-get($colors, 'link');
+      }
+    }
+
+    &_start::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: map-get($colors, accent);
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &_start::before {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background-color: map-get($colors, 'links_dark');
+      position: absolute;
+      left: 50%;
+      top: 0;
+      z-index: -2;
+    }
+
+    &_end::after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-color: map-get($colors, 'accent');
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &_end::before {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background-color: map-get($colors, 'links_dark');
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+    }
+  }
+
+  &__hovered_span {
+    background-color: map-get($colors, 'links_dark');
+    color: map-get($colors, 'link');
+    position: relative;
+    z-index: 5;
+    &::before {
+      content: '';
+      width: 50%;
+      height: 100%;
+      background-color: map-get($colors, 'links_dark');
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+    }
+
+    &:hover::after,
+    &:active::after {
+      background-color: map-get($colors, white);
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 2px map-get($colors, accent);
+      border: none;
+      color: map-get($colors, black);
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -2;
+    }
+  }
+  &__today {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 2px map-get($colors, 'grey30');
+  }
+}
+
+.CalendarMonthGrid {
+  @media (max-width: 480px) {
+    padding: 124px 0;
+    width: 100% !important;
+    text-align: center;
+    box-sizing: border-box;
+    &__horizontal {
+      left: 0;
+    }
+  }
+}
+
+.DateRangePickerInput {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.CalendarDay__selected_end.CalendarDay__selected_start::before {
+  display: none;
+}

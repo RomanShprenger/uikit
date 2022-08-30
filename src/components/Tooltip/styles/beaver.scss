@@ -1,0 +1,16 @@
+@import '../../../styles/beaver/variables';
+
+.yui-tooltip {
+  padding:  8px 12px;
+  border-radius: 2px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+.yui-tooltip .tippy-backdrop {
+  background-color: map-get($colors, 'grey60');
+}

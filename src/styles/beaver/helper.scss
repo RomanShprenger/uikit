@@ -1,0 +1,91 @@
+@import "./variables";
+
+// Global
+
+@mixin make-modificators($variable) {
+  @each $modificator, $styles in $variable {
+    &--#{$modificator} {
+      @each $property, $value in $styles {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+
+// Colors
+
+@mixin make-colors($color) {
+  @each $colorName, $value in $color {
+    &--#{$colorName} {
+      color: $value;
+    }
+  }
+}
+
+.color {
+  @include make-colors($colors);
+}
+
+// Headings
+
+.heading {
+  @include make-modificators($heading);
+}
+
+// Text
+
+.text {
+  @include make-modificators($text);
+}
+
+// Align
+
+.align {
+  @include make-modificators($align);
+}
+
+// Display
+
+.display {
+  @include make-modificators($display);
+}
+
+// Margins
+
+@mixin make-margins-style($values) {
+  @each $direction, $value in $directions {
+    &#{$direction} {
+      @each $size, $ratio in $values {
+        &--#{$size} {
+          $margin: $ratio * $multiplicity;
+          @if ($value == "x") {
+              margin-left: $margin;
+              margin-right: $margin;
+          } @else if ($value == "y") {
+              margin-top: $margin;
+              margin-bottom: $margin;
+          } @else {
+              margin-#{$value}: $margin;
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin make-margins($breakpoint, $margins) {
+  $query: map-get($breakpoints, $breakpoint);
+  @if $breakpoint == 'all' {
+    @include make-margins-style($margins);
+  } @else {
+    @media #{$query} {
+      @include make-margins-style($margins);
+    }
+  }
+}
+
+.m {
+  @each $breakpoint, $values in $sizes {
+     @include make-margins($breakpoint, $values);
+  }
+}

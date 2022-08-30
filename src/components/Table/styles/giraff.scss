@@ -1,0 +1,77 @@
+@import '../../../styles/giraffVariables';
+
+.yui-table {
+  box-shadow: none;
+
+  .yui-icon--arrow-small-down {
+    display: none;
+    line-height: 16px !important;
+  }
+
+  .rt-thead,
+  .rt-thead.-header,
+  .rt-thead.-headerGroups,
+  .rt-tbody,
+  .rt-tfoot,
+  .rt-tr-group {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .rt-tfoot {
+    .rt-td {
+      background-color: $WHITE;
+    }
+  }
+
+  .rt-th {
+    outline: none !important;
+    font-size: 12px;
+    font-weight: 500;
+
+    &.-sort-asc,
+    &.-sort-desc {
+      .yui-icon--arrow-small-down {
+        display: inline-block;
+      }
+    }
+
+    &.-sort-asc {
+      .yui-icon--arrow-small-down {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .rt-tr.-even {
+    background: $tableCellBg;
+  }
+
+  .rt-td {
+    padding: 8px 16px;
+  }
+
+  .rt-th {
+    padding: 8px 16px;
+  }
+
+  .rt-noData {
+    top: 150%;
+  }
+}
+
+.with-footer-as-total {
+  .rt-thead {
+    order: 1;
+    background-color: $DARK_WHITE;
+  }
+
+  .rt-tbody {
+    order: 3;
+  }
+
+  .rt-tfoot {
+    order: 2;
+    border-bottom: 3px solid $tableBorderColor;
+  }
+}

@@ -1,0 +1,119 @@
+@import '../../../styles/beaver/variables';
+
+.yui-pagination {
+  display: flex;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+
+  &__item {
+    padding: 0 12px;
+    color: map-get($colors, black);
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    box-sizing: border-box;
+    min-width: 40px;
+    border: none;
+    outline: none;
+    position: relative;
+
+    &:hover {
+      background-color: map-get($colors, 'grey15');
+      opacity: 0.4;
+    }
+
+    &:active {
+      background-color: map-get($colors, 'grey15');
+      opacity: 0.72;
+    }
+
+    &--current {
+      background-color: map-get($colors, accent);
+      color: map-get($colors, white);
+      cursor: default;
+
+      &:hover {
+        background-color: map-get($colors, accent);
+      }
+    }
+
+    &--next,
+    &--prev {
+      position: relative;
+    }
+
+    &--prev {
+      padding-left: 28px;
+      margin-right: 24px;
+    }
+
+    &--prev::before,
+    &--next::after {
+      content: '';
+      position: absolute;
+      height: 6px;
+      width: 6px;
+      border-left: 2px solid map-get($colors, 'grey30');
+      border-bottom: 2px solid map-get($colors, 'grey30');
+      transform: rotate(45deg);
+      left: 12px;
+      top: 17px;
+      box-sizing: border-box;
+    }
+
+    &--next {
+      padding-right: 28px;
+      margin-left: 24px;
+
+      &::after {
+        left: auto;
+        right: 12px;
+        transform: rotate(-135deg);
+      }
+    }
+
+    &--dots {
+      cursor: default;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  &__item-wrapper {
+    display: flex;
+    position: relative;
+  }
+
+  &__list {
+    min-height: 200px;
+    height: 100%;
+  }
+
+  @media (max-width: 480px) {
+    &__item--next,
+    &__item--prev {
+      width: 0;
+      overflow: hidden;
+      margin: 0;
+      padding: 0;
+      padding-left: 40px;
+    }
+
+    &__item--prev::before {
+      left: 18px;
+    }
+
+    &__item--next::after {
+      right: 18px;
+    }
+  }
+}

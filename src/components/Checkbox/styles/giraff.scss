@@ -1,0 +1,124 @@
+@import '../../../styles/giraffVariables';
+
+.yui-checkbox {
+  position: relative;
+  display: inline-block;
+  user-select: none;
+  cursor: pointer;
+
+  &:before {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 32px;
+    height: 32px;
+    background-color: $GREY30;
+    opacity: 0;
+    border-radius: 50%;
+    transition: opacity 0.15s linear, background-color 0.15s linear;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 0.12;
+    }
+  }
+
+  &:focus {
+    &:before {
+      opacity: 0.16;
+    }
+  }
+
+  &:active {
+    &:before {
+      opacity: 0.2;
+    }
+  }
+
+  &--active {
+    &:before {
+      background-color: $ACCENT;
+    }
+  }
+
+  &__element {
+    display: none;
+  }
+
+  &__label {
+    display: inline-block;
+    vertical-align: top;
+    font-family: inherit;
+    font-size: $checkbox-font-size;
+    line-height: $checkbox-line-height;
+    font-weight: $checkbox-font-weight;
+    letter-spacing: $checkbox-letter-spacing;
+    color: $BLACK;
+    padding-left: 32px;
+    &-text {
+        margin: 2px 0;
+        display: inline-block;
+        vertical-align: top;
+        line-height: $checkbox-label-line-height
+    }
+
+    &:before {
+      box-sizing: border-box;
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      border: 1px solid $GREY25;
+      border-radius: $checkbox-border-radius;
+    }
+    &:after {
+      opacity: 0;
+      content: "";
+      position: absolute;
+      width: $checkbox-size;
+      height: $checkbox-size;
+      left: 5px;
+      top: 5px;
+      background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDEyIDEyIj4gIDxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0zLjU2OTQ0MjQ1LDUuNTExOTA2NDcgQzMuMjk5ODc1ODQsNS4xOTc0MTIwOSAyLjgyNjQwMDg1LDUuMTYwOTkwOTQgMi41MTE5MDY0Nyw1LjQzMDU1NzU1IEMyLjE5NzQxMjA5LDUuNzAwMTI0MTYgMi4xNjA5OTA5NCw2LjE3MzU5OTE1IDIuNDMwNTU3NTUsNi40ODgwOTM1MyBMNC43MTQyODU3MSw5LjE1MjQ0MzA2IEw5LjU2OTQ0MjQ1LDMuNDg4MDkzNTMgQzkuODM5MDA5MDYsMy4xNzM1OTkxNSA5LjgwMjU4NzkxLDIuNzAwMTI0MTYgOS40ODgwOTM1MywyLjQzMDU1NzU1IEM5LjE3MzU5OTE1LDIuMTYwOTkwOTQgOC43MDAxMjQxNiwyLjE5NzQxMjA5IDguNDMwNTU3NTUsMi41MTE5MDY0NyBMNC43MTQyODU3MSw2Ljg0NzU1Njk0IEwzLjU2OTQ0MjQ1LDUuNTExOTA2NDcgWiIvPjwvc3ZnPg==") no-repeat 50% 50%;
+    }
+  }
+
+  &__element:checked + &__label {
+    &:before {
+      border: 2px solid $ACCENT;
+      background: $ACCENT;
+    }
+    &:after {
+      opacity: 1;
+    }
+  }
+
+  &--indeterminate &__label {
+    &:before {
+      border: 2px solid $ACCENT;
+      background: $ACCENT;
+    }
+    &:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      left: 8px;
+      right: 1px;
+      top: 50%;
+      width: 8px;
+      margin: -1px 0 0 0px;
+      background: $WHITE;
+      opacity: 1;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.38;
+    pointer-events: none;
+  }
+}

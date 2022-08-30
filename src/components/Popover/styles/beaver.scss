@@ -1,0 +1,26 @@
+@import '../../../styles/beaver/variables';
+
+.yui-popover {
+  padding: 24px !important;
+  padding-bottom: 18px !important;
+  border-radius: 8px !important;
+  box-shadow: 0 11px 15px rgba(178, 180, 191, 0.2), 0 9px 46px rgba(178, 180, 191, 0.12), 0 24px 38px rgba(178, 180, 191, 0.14) !important;
+  text-align: left !important;
+
+  &--nopadding {
+    padding: 0 !important;
+  }
+
+  &--menu {
+    padding: 0 !important;
+    border-radius: 2px !important;
+  }
+}
+
+[aria-describedby*="tippy-tooltip-"] {
+  display: inline-block;
+}
+
+.tippy-popper {
+  max-width: none;
+}

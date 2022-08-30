@@ -1,0 +1,27 @@
+@import '../../../styles/beaver/variables';
+
+.yui-snackbar {
+  z-index: 100000 !important;
+  &--top {
+    top: 48px;
+    bottom: auto;
+  }
+  &--bottom {
+    top: auto;
+    bottom: 8px;
+  }
+  & &__body {
+    background-color: map-get($colors, 'grey80');
+    box-shadow: 0 1px 10px rgba(map-get($colors, 'grey30'), 0.2), 0 4px 5px rgba(map-get($colors, 'grey30'), 0.12), 0 2px 4px rgba(map-get($colors, 'grey30'), 0.14);
+    border-radius: 4px;
+    padding: 8px 16px;
+    min-height: 48px;
+    box-sizing: border-box;
+    @media (min-width: 600px) {
+      min-width: 344px;
+    }
+  }
+  & &__message {
+    padding: 0;
+  }
+}

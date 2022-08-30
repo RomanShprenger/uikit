@@ -1,0 +1,211 @@
+@import '../../../styles/giraffVariables';
+
+.yui-select {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+
+  &__element {
+    width: 100%;
+    outline: none;
+    border: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    font-family: inherit;
+    font-size: $select-font-size;
+    height: $select-height;
+    font-weight: $select-font-weight;
+    letter-spacing: $select-letter-spacing;
+    color: $PRIMARY;
+    margin: $select-margin-y 0;
+    border: 1px solid $GREY20;
+    border-radius: $select-border-radius;
+    background: transparent;
+    box-sizing: border-box;
+    transition: border-color 0.15s linear;
+
+    &:hover {
+      background-color: $GREY7;
+    }
+  }
+
+  &__helper,
+  &__label {
+    display: inline-block;
+    position: absolute;
+    max-width: 100%;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    pointer-events: none;
+    color: $GREY60;
+  }
+
+  &__helper {
+    left: 0;
+    bottom: 4px;
+  }
+
+  &__label {
+    left: 0;
+    top: 4px;
+    transition: all 0.2s linear;
+  }
+
+  &__element &__input {
+    font-size: $select-font-size;
+    line-height: $select-line-height;
+    letter-spacing: $select-letter-spacing;
+    margin: 0 0 0 8px;
+  }
+
+  &__element &__control {
+    border: 0;
+    padding: 0;
+    padding-left: 12px;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    height: $select-height - 2px;
+    min-height: auto;
+    cursor: pointer;
+  }
+
+  &__element &__placeholder {
+    font-size: $select-font-size;
+    line-height: $select-line-height;
+    letter-spacing: $select-letter-spacing;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &__element &__value-container {
+    font-size: $select-font-size;
+    line-height: $select-line-height;
+    letter-spacing: $select-letter-spacing;
+    height: $select-height - 2px;
+    padding: 0;
+  }
+
+  &__element &__single-value {
+    color: $PRIMARY;
+    margin: 0;
+  }
+
+  &__caret {
+    color: inherit;
+  }
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__element &__menu {
+    top: calc(100% + 4px);
+    margin: 0;
+    padding: 0;
+    border: 1px solid $GREY20;
+    box-shadow: none;
+    width: 100%;
+    left: -1px;
+    &-list {
+      padding: .5rem 0;
+    }
+  }
+
+  &__element &__option {
+    padding: 0 11px 0 12px;
+    line-height: $select-line-height;
+
+    &--is-selected {
+      background-color: transparent;
+      color: inherit;
+    }
+
+    &--is-focused {
+      background-color: $ACCENT;
+      color: #fff;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  &--white &__element {
+    background: $WHITE70;
+    &:hover {
+      background-color: $GREY7;
+    }
+  }
+
+  // With icon
+
+  &--icon &__control {
+    padding: 0;
+    padding-left: 8px;
+  }
+
+  &--icon &__placeholder {
+    left: 28px;
+  }
+
+  &--icon &__single-value {
+    left: 28px;
+  }
+
+  &--icon &__icon {
+    color: $GREY30;
+  }
+
+  &--empty &__label {
+    font-size: $select-font-size;
+    line-height: $select-line-height;
+    padding: 0 12px;
+    top: $select-margin-y
+  }
+
+  &--error &__element {
+    border: 1px solid $ERROR;
+  }
+
+  &--error &__label,
+  &--error &__helper {
+    color: $ERROR;
+  }
+
+  &--active &__element:not([placeholder]) + &__label,
+  &--empty &__element[placeholder] + &__label {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 0;
+    top: 4px;
+  }
+
+  &--active#{&}--error &__label,
+  &--active#{&}--error &__helper {
+    color: $ERROR;
+  }
+
+  &--disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  &--disabled &__element {
+    border-bottom: 1px solid $GREY10;
+  }
+
+  &--disabled &__label,
+  &--disabled &__helper {
+    color: $GREY60;
+  }
+}

@@ -1,0 +1,82 @@
+@import '../../../styles/beaver/variables';
+
+.yui-table {
+  border: 0;
+  box-shadow: none;
+
+  .sort-icon {
+    display: none;
+  }
+
+  .rt-thead,
+  .rt-thead.-header,
+  .rt-thead.-headerGroups,
+  .rt-tbody,
+  .rt-tfoot,
+  .rt-tr-group {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .rt-thead.-header.sticky-clone {
+    box-shadow: 0 1px 5px rgba(178, 180, 191, 0.2), 0 3px 4px rgba(178, 180, 191, 0.12), 0 2px 4px rgba(178, 180, 191, 0.14);
+  }
+
+  .sticky-clone,
+  .rt-tbody,
+  .rt-tfoot {
+    background: map-get($colors, white);
+  }
+
+  .rt-th {
+    outline: none !important;
+
+    &.-sort-asc,
+    &.-sort-desc {
+      .sort-icon {
+        display: inline-block;
+      }
+    }
+
+    &.-sort-asc {
+      .sort-icon {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &.-sort-desc {
+      .sort-icon {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  .rt-tr.-even {
+    background: rgba(map-get($colors, 'grey10'), 0.5);
+  }
+
+  .rt-noData {
+    top: 150%;
+  }
+
+  .rt-th,
+  .rt-td {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+.with-footer-as-total {
+  .rt-thead {
+    order: 1;
+  }
+
+  .rt-tbody {
+    order: 3;
+  }
+
+  .rt-tfoot {
+    order: 2;
+    border-bottom: 3px solid map-get($colors, 'grey10');
+  }
+}

@@ -1,0 +1,40 @@
+@import '../../../styles/beaver/variables';
+
+.yui-progressbar {
+  width: 248px;
+  line-height: 16px;
+  font-family: inherit;
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  &__from {
+    color: map-get($colors, accent);
+  }
+
+  &__scale {
+    height: 4px;
+    background-color: map-get($colors, accent);
+    margin-bottom: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  &__progress {
+    background-color: map-get($colors, accent);
+    height: 4px;
+  }
+
+  &__helper {
+    display: flex;
+    justify-content: space-between;
+    color: map-get($colors, 'grey60');
+    font-size: 12px;
+  }
+}

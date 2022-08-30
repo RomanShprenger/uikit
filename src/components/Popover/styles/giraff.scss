@@ -1,0 +1,59 @@
+@import '../../../styles/giraffVariables';
+
+.yui-popover {
+  padding: 12px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 3px 6px 0 rgba(183,182,194,0.5) !important;
+  border: 1px solid #ccc;
+
+  &--nopadding {
+    padding: 0px !important;
+  }
+}
+
+[aria-describedby*="tippy-tooltip-"] {
+  display: inline-block;
+}
+
+.tippy-popper {
+  max-width: none;
+}
+
+.tippy-tooltip.light-theme[x-placement^=bottom] .tippy-arrow,
+.tippy-tooltip.light-theme[x-placement^=right] .tippy-arrow,
+.tippy-tooltip.light-theme[x-placement^=left] .tippy-arrow,
+.tippy-tooltip.light-theme[x-placement^=top] .tippy-arrow {
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  left: 50%;
+  background-color: #fff;
+  transform: rotate(135deg);
+  top: -9px;
+  border: none;
+  margin: 0;
+  border-left: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.tippy-tooltip.light-theme[x-placement^=right] .tippy-arrow {
+  left: -5px;
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.tippy-tooltip.light-theme[x-placement^=left] .tippy-arrow {
+  transform: rotate(-135deg);
+  right: -9px;
+  left: auto;
+  top: 50%;
+}
+
+.tippy-tooltip.light-theme[x-placement^=top] .tippy-arrow {
+  transform: rotate(-45deg);
+  top: auto;
+  right: auto;
+  left: 50%;
+  bottom: -5px;
+}
